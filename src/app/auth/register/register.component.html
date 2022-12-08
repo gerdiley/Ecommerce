@@ -1,0 +1,27 @@
+<form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" ngModel required email>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="paasword" name="password" ngModel required>
+        <!-- ngModel sta per modello di dati all interno di ng Form (controlli) -->
+      </div>
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="name" class="form-control" id="name" aria-describedby="emailHelp" name="name" ngModel required>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="password">Surname</label>
+        <input type="surname" class="form-control" id="surname" placeholder="surname" name="surname" ngModel required>
+        <!-- ngModel sta per modello di dati all interno di ng Form (controlli) -->
+      </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Submit</button>
+    <!-- metto disabled per disabilitare il button quando il form non e valido, ossia quando almeno uno dei campi non eé corretto  -->
+  </form>
+  <form>
+  <!-- un form ha diversi stati: -->
+  <!-- di default è tutto valido e untouched -->
+  <!-- abbiamo la validazzione su ogni singolo campo e su tutto il form -->
