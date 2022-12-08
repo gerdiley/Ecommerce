@@ -1,0 +1,16 @@
+
+<div class="container">
+  <div class="row row-cols-2 g-2">
+    <div class="card" style="width: 18rem;" *ngFor="let item of products">
+      <img src="{{item.image}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{item.title}}</h5>
+        <p class="card-text">{{item.price | currency:'EUR': '&euro;' }} </p>
+        <a [routerLink]="[item.id]" class="btn btn-primary">GO to Details</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
